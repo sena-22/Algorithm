@@ -8,9 +8,7 @@ function solution(n, m) {
         if(n%m !== 0) return GCD(m,n%m) 
         else return m
     }
-    answer[0] = GCD(n,m)
-    answer[1] = LCM(n,m)
-    
-    return answer
+
+    return answer=[GCD(n,m),LCM(n,m)]
 }
 

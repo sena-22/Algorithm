@@ -1,5 +1,5 @@
 function solution(n, m) {
-    let answer = [1,1]
+    let answer
      const LCM = (n,m) => {
          return (n*m) /GCD(n,m)
      }

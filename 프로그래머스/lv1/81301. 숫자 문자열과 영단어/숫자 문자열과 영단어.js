@@ -6,5 +6,5 @@ const solution = (s) => {
        s = s.split(words[i]).join(i)
     }
     
-    return Number(s)
+    return parseInt(s)
 }

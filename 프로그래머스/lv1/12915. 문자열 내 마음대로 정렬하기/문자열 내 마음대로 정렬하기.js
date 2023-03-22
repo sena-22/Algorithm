@@ -1,9 +1,6 @@
 const solution = (strings,n) => {
-
-    let list = strings.map((el,idx)=>({idx:idx,val:el}))
-    list.sort((a,b)=>{
-        if(a.val[n] === b.val[n]) return a.val > b.val ? 1 :-1
-      return a.val[n]>b.val[n] ? 1 : -1
+  return  strings.sort((a,b)=>{
+        if(a[n] === b[n]) return a> b ? 1 :-1
+      return a[n]>b[n] ? 1 : -1
     })   
-    return list.map(el=> el.val)
 }

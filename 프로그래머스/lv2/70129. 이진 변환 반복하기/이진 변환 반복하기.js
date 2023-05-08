@@ -5,6 +5,7 @@ function solution(s) {
         count++
         removedZero+=s.split(0).length-1
        s = s.split(0).join('').length.toString(2)
+          console.log(s)
    }
 
     return [count,removedZero]

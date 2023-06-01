@@ -1,19 +1,13 @@
 const solution = s => {
 
-    let openBrakets = 0;
-    let closeBrakets  = 0;
-    
-    if(s[0] !=='(' || s[s.length-1] !==')') return false;
+   let count = 0
    
-    for (let i=0; i<s.length;i++){ 
-      s[i] === '(' ?  openBrakets++ :  closeBrakets++;
-       if(openBrakets < closeBrakets) return false;
-    }
-   
-   if (openBrakets === closeBrakets) return true
+   for(let i=0;i<s.length;i++) {
+       s[i] === '(' ? count++ : count--
+       if(count<0) return false
+   }
     
-   return false
-    
+    return count !== 0 ?   false :true
 }
 
 

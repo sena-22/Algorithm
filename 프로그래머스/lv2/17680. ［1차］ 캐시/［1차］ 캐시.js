@@ -1,8 +1,6 @@
 function solution(cacheSize, cities) {
     let answer = 0; 
     let cache = []
-    
-    // if(cacheSize === 0) return cities.length*5
 
     for(let i=0;i<cities.length;i++) {
         let city = cities[i].toLowerCase()

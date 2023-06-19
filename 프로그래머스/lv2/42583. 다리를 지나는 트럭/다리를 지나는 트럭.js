@@ -3,7 +3,6 @@ function solution(bridge_length, weight, truck_weights) {
     const bridge = new Array(bridge_length).fill(0)
     let time = 0
     let total_weight = 0
-    let cur_truck = 0
  
     while(bridge.length) {
             total_weight -= bridge.shift()  

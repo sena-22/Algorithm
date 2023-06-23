@@ -1,29 +1,6 @@
 function solution(operations) {
-    class PriorityQueue {
-        constructor(queue) {
-            this.queue = [] 
-        }
-        
-        add(num) {
-            this.queue.push(num)
-            this.queue.sort((a,b)=>a-b)
-        }
-        
-        del_min() {
-            this.queue.shift()
-        }
-        
-        del_max() {
-            this.queue.pop()
-        }
-        
-        getMaxMin()  {
-            return [this.queue[this.queue.length-1],this.queue[0],]
-        }
-        
-    }
     
-    let priorityQueue = new PriorityQueue([])
+    let priorityQueue = []
 
     operations.forEach((operation)=>{
         let [command,num] = operation.split(' ')
@@ -31,19 +8,22 @@ function solution(operations) {
         
         switch(command){
             case 'I':
-                priorityQueue.add(num)
+                priorityQueue.push(num)
+                priorityQueue.sort((a,b)=>a-b)
                 break;
             case 'D':
                 if(num === 1) {
-                    priorityQueue.del_max()
+                    priorityQueue.pop()
+                    break;
                 } else if(num === -1) {
-                    priorityQueue.del_min()
+                    priorityQueue.shift()
+                    break;
                 }
         }
     })
-    
-        if(priorityQueue.queue.length === 0) return [0,0]
+
+        if(priorityQueue.length === 0) return [0,0]
         else {
-            return priorityQueue.getMaxMin()
+            return [priorityQueue[priorityQueue.length-1] , priorityQueue[0]]
         }
 }

@@ -1,18 +1,18 @@
 function solution(k, dungeons) {
     const countArr = []
  
-    const permute = (nums) => {
+    const permute = (dungeon) => {
         let result = []
-        if(nums.length === 0) return []
-        if(nums.length === 1) return [nums]
+        if(dungeon.length === 0) return []
+        if(dungeon.length === 1) return [dungeon]
       
-        for (let i=0;i<nums.length;i++) {
-            const cur_num = nums[i]
-            const remain_nums = nums.slice(0,i).concat(nums.slice(i+1))
-            const remain_nums_permuted = permute(remain_nums)
+        for (let i=0;i<dungeon.length;i++) {
+            const cur = dungeon[i]
+            const remain = dungeon.slice(0,i).concat(dungeon.slice(i+1))
+            const remain_permuted = permute(remain)
             
-            for(let j=0;j<remain_nums_permuted.length;j++) {
-                const permutedArr = [cur_num].concat(remain_nums_permuted[j])
+            for(let j=0;j<remain_permuted.length;j++) {
+                const permutedArr = [cur].concat(remain_permuted[j])
                 result.push(permutedArr)
             }
         }
@@ -20,10 +20,10 @@ function solution(k, dungeons) {
     }
        const dungeonPermutation = permute(dungeons)
        
-       dungeonPermutation.forEach((combi) => {
+       dungeonPermutation.forEach((permutation) => {
            let count = 0
            let rest = k
-           combi.forEach((el)=> {
+           permutation.forEach((el)=> {
                 let [necessary, use] = el
                 if(necessary > rest) return 
                 rest -= use

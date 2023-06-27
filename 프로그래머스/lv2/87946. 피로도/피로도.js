@@ -1,7 +1,6 @@
 function solution(k, dungeons) {
     const countArr = []
  
-    // 조합 구하기
     const permute = (nums) => {
         let result = []
         if(nums.length === 0) return []
@@ -19,9 +18,9 @@ function solution(k, dungeons) {
         }
         return result 
     }
-       const dungeonCombination = permute(dungeons)
+       const dungeonPermutation = permute(dungeons)
        
-       dungeonCombination.forEach((combi) => {
+       dungeonPermutation.forEach((combi) => {
            let count = 0
            let rest = k
            combi.forEach((el)=> {

@@ -21,9 +21,11 @@ function solution(operations) {
                 }
         }
     })
+    
+    let leng = priorityQueue.length
 
-        if(priorityQueue.length === 0) return [0,0]
+        if(leng === 0) return [0,0]
         else {
-            return [priorityQueue[priorityQueue.length-1] , priorityQueue[0]]
+            return [priorityQueue[leng-1] , priorityQueue[0]]
         }
 }

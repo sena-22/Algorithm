@@ -1,23 +1,23 @@
 function solution(tickets) { 
-    let route = []
-    const visited = []
+    const used = []
     const stack = []
     
    tickets.sort()
+    
+    // console.log(tickets) //[ [ 'HND', 'IAD' ], [ 'ICN', 'JFK' ], [ 'JFK', 'HND' ] ]
 
     const dfs = (airport, count) => {
         stack.push(airport)
         
         if(count === tickets.length) {
-            // route = stack
             return true
         }
            
         for(let i=0;i<tickets.length;i++) {
-            if(!visited[i] && tickets[i][0] === airport) {
-                visited[i] = true
+            if(!used[i] && tickets[i][0] === airport) { // 현재 그 공항이면
+                used[i] = true
                 if(dfs(tickets[i][1], count+1)) return true
-                visited[i] = false 
+                used[i] = false 
         }        
     } 
     stack.pop()

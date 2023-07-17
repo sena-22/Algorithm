@@ -12,18 +12,19 @@ function solution(begin, target, words) {
 
         return count === 1 ? true : false
     }
-    const visited = {[begin]:0}
-    const q =[begin]
+    
+    const visited = {[begin]:0} // {dot:2, lot:2}
+    const q = [begin]
     
    while(q.length) {
-       const cur = q.shift()
+       const cur = q.shift() // dot
        
-       if(cur === target) break
+       if(cur === target) break 
        
-       for(const word of words) {
+       for(const word of words) { // hot
            if(!visited[word] && isConnected(word,cur)) {
-               visited[word] = visited[cur] +1
-               q.push(word)
+               visited[word] = visited[cur] +1 // 1 
+               q.push(word)  // dot,
            }
        }
    }

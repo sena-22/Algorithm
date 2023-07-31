@@ -1,14 +1,15 @@
 function solution(rectangle, characterX, characterY, itemX, itemY) {
     let answer = 0
 
-        const map = Array.from({length:102},()=>Array.from({length:102},()=>-1))
+    const map = Array.from({length:102},()=>Array.from({length:102},()=>-1))
+
     
     rectangle.forEach((r)=>{
         const [x1,y1,x2,y2] = r.map((el)=>el*2)
         
         for(let i=x1; i<=x2; i++) { //2 14 
             for(let j=y1; j<=y2; j++) { // 2 8
-                if(x1<i && i<x2 && y1<j && j<y2) { 
+                if(x1 < i && i<x2 && y1<j && j< y2) { 
                     map[i][j] = 0
                 } else if(map[i][j] != 0) { 
                     map[i][j] = 1 
@@ -16,13 +17,15 @@ function solution(rectangle, characterX, characterY, itemX, itemY) {
             }
         }
     })
+    
+    // console.log(map)
 
     const dx = [-1,1,0,0]
     const dy = [0,0,-1,1]
     
     let q = []
     q.push([characterX*2, characterY*2])
-        const visited = Array.from({length:102},()=>Array.from({length:102},()=>1))
+     const visited = Array.from({length:102},()=>Array.from({length:102},()=>1))
      visited[characterX*2][characterY*2] = 0 // 시작 지점 0으로 초기화
     
     while(q.length) {

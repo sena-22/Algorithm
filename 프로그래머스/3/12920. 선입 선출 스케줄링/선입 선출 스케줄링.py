@@ -15,15 +15,14 @@ def solution(n, cores):
             right = mid
         else:
             left = mid +1
-    print(left,right,mid)
-    t = left # n번째 작업이 끝나는 최소 시간
+    t = left # n번째 작업이 끝나는 시간(left==right)
     
     # t-1초까지 처리된 작업 수
     done = processed(t-1,cores)
     
-    # t초에 끝나는 코어 중 n번째 찾기
+    # t초에 끝나는 코어를 앞에서부터 세다가 => 작업 개수가 n이 될 때의 코어를 찾음
     for i, c in enumerate(cores):
-        if t % c == 0:
-            done += 1
+        if t % c == 0: # t초에 작업을 끝낸 코어
+            done += 1 
             if done == n:
-                return i+1
+                return i+1 # 1번부터 시작(인덱스)

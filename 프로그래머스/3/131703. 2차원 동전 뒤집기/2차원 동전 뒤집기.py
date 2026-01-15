@@ -1,13 +1,13 @@
 def solution(beginning, target):
     n = len(beginning)
     m = len(beginning[0])
-    INF = float('inf')
+    INF = 10**9
     answer = INF
-    # 행이 n개일때 선택/비선택의 경우는 2**n
-    for mask in range(2**n):           
+
+    for mask in range(1 << n):           
         board = [row[:] for row in beginning]
         cnt = 0
-        # print(mask)
+        print(mask)
         for i in range(n):
             if mask & (1 << i):
                 cnt += 1

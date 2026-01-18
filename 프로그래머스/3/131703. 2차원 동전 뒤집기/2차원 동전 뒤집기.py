@@ -6,7 +6,7 @@ def solution(beginning, target):
     # 행이 n개일때 선택/비선택의 경우는 2**n
     # 행이 3일때 8가지 경우 
     # 0이 안뒤집음, 1이 뒤집음
-    # 000 / 001 / 010 / 011 / 100 / 101/ 110 / 111
+    # 000 / 001 / 010 / 011 / 100 / 101 / 110 / 111
     for mask in range(2**n):    
         # 값만 복사
         board = [row[:] for row in beginning]
@@ -27,12 +27,6 @@ def solution(beginning, target):
                     # i행 모든 값 반대로 바꾸기
                     board[i][j] ^= 1
 
-        # [[1, 1, 1], 행이 다르면 열 뒤집기
-        #  [0, 0, 0], 
-        #  [0, 0, 0]]
-        # [[1, 0, 1], 
-        #  [0, 1, 0], 
-        #  [0, 1, 0]]
         for j in range(m): # 0번 열부터 m-1열까지
             if board[0][j] != target[0][j]: # 0번 행이 다르면
                 cnt += 1

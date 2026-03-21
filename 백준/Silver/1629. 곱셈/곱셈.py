@@ -2,4 +2,19 @@ import sys
 input = sys.stdin.readline
 
 [a,b,c]  = list(map(int,input().split()))
-print(pow(a, b, c))
+
+def power(a,b,c):
+  if b == 0:
+    return 1 
+
+  if b == 1:
+    return a % c
+  
+  x = power(a, b//2, c)
+
+  if b % 2 == 0:
+    return (x * x) % c
+  else:
+    return (x * x * a) % c
+  
+print(power(a,b,c))

@@ -1,5 +1,3 @@
-# Fisher-Yates Shuffle
-
 import random
 
 class Solution:

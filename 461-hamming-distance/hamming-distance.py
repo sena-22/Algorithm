@@ -10,7 +10,7 @@ class Solution:
 
         max_len = max(len(bin(x)),len(bin(y)))
 
-        # max_len 길이만큼 앞에 0 채우기
+        # zfill : max_len 길이만큼 앞에 0 채우기
         bi_x = bi_x.zfill(max_len) 
         bi_y = bi_y.zfill(max_len) 
 
@@ -19,7 +19,7 @@ class Solution:
         for a,b in zip(bi_x,bi_y):
             if a != b:
                 ham_dis += 1
-                
+
         return ham_dis
 
  

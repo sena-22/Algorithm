@@ -4,12 +4,13 @@ class Solution:
     # 숫자들은 [0, n] 범위에 속합니다.
     # 배열에 빠져 있는 유일한 숫자를 반환하세요.
 
+
+        # 시간복잡도 O(n) # O(1) * n번 반복
         num_set = set(nums)
 
-        for i in range(len(nums)+1):
-            if i not in num_set:
+        for i in range(len(nums)+1): 
+            if i not in num_set: 
                 return i
-
 
         # # 시간복잡도 O(n²)
         # for i in range(len(nums)+1):

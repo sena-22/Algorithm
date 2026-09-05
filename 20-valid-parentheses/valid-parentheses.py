@@ -8,12 +8,11 @@ class Solution:
 
         for i in s:
             # i가 여는 괄호면 => 스택에 넣기
-
             # i가 닫는 괄호면 스택에서 마지막 괄호 꺼내서 짝이 맞는지 확인
             if i in '({[':
                 stack.append(i)
-            elif i in ')}]':
 
+            elif i in ')}]':
                 if not stack: # 처음에 닫는 괄호로 시작 => 틀림
                     return False
 

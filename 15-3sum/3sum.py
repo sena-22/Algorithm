@@ -22,7 +22,7 @@ class Solution:
                 three_sum = nums[i] + nums[left] + nums[right]
                 if three_sum == 0 :
                     answer.append([nums[i],nums[left],nums[right]])
-                    
+
                     left += 1
                     right -= 1 
 
@@ -30,6 +30,7 @@ class Solution:
                         left += 1
                     while left < right and nums[right] == nums[right + 1]:
                         right -= 1
+                        
                 elif three_sum < 0 :
                     left += 1
                 else: 

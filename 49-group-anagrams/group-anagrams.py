@@ -19,6 +19,7 @@ class Solution:
             else:
                 # 새로운 키로 추가 
                 hash[key] = [s]
+                
         # 해시를 배열로 바꿔서 리턴
         answer = []
 

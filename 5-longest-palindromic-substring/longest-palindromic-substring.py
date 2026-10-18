@@ -3,7 +3,8 @@ class Solution:
     # Palindromic Substring : 앞에서 읽어도 뒤에서 읽어도 같은 문자열 
         answer = ''
 
-        # 문자열을 중심으로 두고 탐색
+        # 홀수 : bab
+        # 짝수 : bb
         for i in range(len(s)):
 
             # 홀수

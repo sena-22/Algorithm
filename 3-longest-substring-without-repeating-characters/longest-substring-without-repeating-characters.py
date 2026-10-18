@@ -1,8 +1,6 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         # 중복 문자가 없는 연속된 부분 문자열의 최대 길이
-        # 슬라이딩 윈도우
-
         # 최대 길이 저장
         longest_sub = 0
         
